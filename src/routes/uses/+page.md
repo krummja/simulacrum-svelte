@@ -4,3 +4,8 @@
 
 - SvelteKit
 - VS Code
+- PyCharm
+- DataGrip
+- Rider
+- Obsidian
+- Slack
