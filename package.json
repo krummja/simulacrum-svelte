@@ -2,6 +2,10 @@
 	"name": "simulacrum-svelte",
 	"version": "0.0.1",
 	"private": true,
+	"engines": {
+		"npm": ">=7.14.0",
+		"node": ">=16.14.2"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
