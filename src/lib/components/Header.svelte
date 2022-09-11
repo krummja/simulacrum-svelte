@@ -22,7 +22,7 @@
 <style lang="scss">
   header {
     padding: 1rem;
-    background: lightskyblue;
+    background: var(--deepnight-dark);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

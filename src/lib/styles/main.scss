@@ -1,7 +1,9 @@
+@import './theme.scss';
+
 body {
   margin: 0;
-  background: #eee;
-  color: #333;
+  background: var(--deepnight-darker);
+  color: var(--overcast-soft);
   font-family: sans-serif;
 }
 
