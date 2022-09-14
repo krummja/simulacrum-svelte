@@ -12,9 +12,6 @@
       <li>
         <a href="/about">About</a>
       </li>
-      <li>
-        <a href="/uses">Uses</a>
-      </li>
     </ul>
   </nav>
 </header>

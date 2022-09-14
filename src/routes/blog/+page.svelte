@@ -9,6 +9,8 @@
 
 <h1>Blog</h1>
 
+<h2>Posts</h2>
+
 {#each data.posts as post}
   <BlogPost 
     title={post.meta.title} 
@@ -16,3 +18,7 @@
     path={post.path} 
   />
 {/each}
+
+<h2>Fragments</h2>
+
+<h2>Series</h2>

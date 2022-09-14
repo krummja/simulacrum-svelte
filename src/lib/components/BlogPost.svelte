@@ -6,19 +6,11 @@
 
 <div class="blog-post">
   <h2><a href={path}>{title}</a></h2>
-  <h3>Published {date}</h3>
+  <h4 class="date">Published {date}</h4>
 </div>
 
 <style lang="scss">
-  a {
-    text-decoration: none;
-
-    &:visited {
-      color: var(--fg-soft);
-    }
-
-    &:hover {
-      color: var(--fg-softer);
-    }
-  }
+.blog-post {
+  padding: 0 0 16px 0;
+}
 </style>

@@ -6,10 +6,11 @@
   export let data: PageData;
 </script>
 
-<article class="prose">
+<article>
   <!-- Metadata is rendered up here -->
   <h1>{data.title}</h1>
-  <p>Published: {data.date}</p>
+  <h4 class="date">Published {data.date}</h4>
+  <hr/>
 
   <!-- Then we use a dynamic component to push content -->
   <svelte:component this={data.content}/>
