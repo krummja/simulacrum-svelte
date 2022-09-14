@@ -1,3 +1,5 @@
+// Module for loading markdown blog posts.
+
 import { fetchMarkdownPosts } from "$lib/utils";
 import { json } from '@sveltejs/kit';
 

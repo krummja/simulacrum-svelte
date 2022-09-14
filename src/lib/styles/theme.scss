@@ -38,3 +38,19 @@
     border: 3px solid var(--blossom-light);
   }
 }
+
+html:not(.dark) {
+  --c-bg: var(--overcast-soft);
+  --c-bg-darker: var(--overcast-dark);
+  --fg: var(--deepnight-dark);
+  --fg-soft: var(--blossom-darker);
+  --fg-softer: var(--blossom-dark);
+}
+
+html.dark {
+  --c-bg: var(--deepnight-dark);
+  --c-bg-darker: var(--deepnight-darker);
+  --fg: var(--overcast-soft);
+  --fg-soft: var(--blossom-light);
+  --fg-softer: var(--blossom-lighter);
+}

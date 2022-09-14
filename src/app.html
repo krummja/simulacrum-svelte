@@ -4,9 +4,26 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
+
+		<script>
+			(function () {
+				const prefersDark = (
+					window.matchMedia && 
+					window.matchMedia('(prefers-color-scheme: dark)').matches
+				);
+				
+				const setting = 'auto';
+
+				if (setting === 'dark' || (prefersDark && setting !== 'light'))
+					document.documentElement.classList.toggle('dark', true);
+			})()
+		</script>
+		<!-- <link rel="stylesheet" href="%sveltekit.assets%/prism-tomorrow-night.css" /> -->
+
 		%sveltekit.head%
 	</head>
 	<body>
 		<div>%sveltekit.body%</div>
+		<!-- <script src="%sveltekit.assets%/prism.js"></script> -->
 	</body>
 </html>

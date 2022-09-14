@@ -1,14 +1,26 @@
+@import './reset.scss';
 @import './theme.scss';
+@import './prism-theme.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 body {
   margin: 0;
   background: var(--deepnight-darker);
   color: var(--overcast-soft);
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 main {
   padding: 1rem;
   margin: 2rem auto;
   max-width: 40rem;
+}
+
+p {
+  a {
+    text-decoration: none;
+    color: var(--sunset-orange-darker);
+    border-bottom: 1px dotted var(--sunset-orange-darker);
+  } 
 }
