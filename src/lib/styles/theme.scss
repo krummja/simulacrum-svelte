@@ -1,31 +1,63 @@
 :root {
-  --deepnight-darker: rgb(22, 21, 21);
-  --deepnight-dark: rgb(39, 37, 37);
-  --deepnight-normal: rgb(53, 49, 50);
-  --deepnight-light: rgb(66, 62, 63);
-  --deepnight-lighter: rgb(103, 101, 102);
-  --deepnight-lightest: hsl(330, 1%, 60%);
-  
-  --overcast-soft: rgb(247, 243, 239);
-  --overcast-light: rgb(249, 240, 244);
-  --overcast-normal: #ebe5e7;
-  --overcast-dark: rgb(220, 214, 216);
-  
-  --blossom-lighter: rgb(241, 193, 207);
-  --blossom-light: rgb(232, 155, 177);
-  --blossom-normal: rgb(224, 123, 150);
-  --blossom-dark: rgb(215, 101, 128);
-  --blossom-darker: rgb(190, 58, 89);
+  $deepnight-darker: rgb(22, 21, 21);
+  $deepnight-dark: rgb(39, 37, 37);
+  $deepnight-normal: rgb(53, 49, 50);
+  $deepnight-light: rgb(66, 62, 63);
+  $deepnight-lighter: rgb(103, 101, 102);
+  $deepnight-lightest: hsl(330, 1%, 60%);
 
-  --sunset-red: rgb(224, 77, 80);
-  --sunset-orange: rgb(224, 150, 118);
-  --sunset-orange-darker: hsl(18, 63%, 55%);
-  --sunset-yellow: rgb(224, 199, 154);
-  --sunset-yellow-darker: hsl(39, 46%, 50%);
-  --sunset-green: rgb(190, 223, 169);
-  --sunset-green-darker: hsl(97, 46%, 33%);
-  --sunset-blue: rgb(148, 181, 224);
-  --sunset-blue-darker: hsl(214, 55%, 55%);
+  $overcast-soft: rgb(247, 243, 239);
+  $overcast-light: rgb(249, 240, 244);
+  $overcast-normal: #ebe5e7;
+  $overcast-dark: rgb(220, 214, 216);
+
+  $blossom-lighter: rgb(241, 193, 207);
+  $blossom-light: rgb(232, 155, 177);
+  $blossom-normal: rgb(224, 123, 150);
+  $blossom-dark: 215, 101, 128;
+  $blossom-darker: rgb(190, 58, 89);
+
+  $sunset-red: rgb(224, 77, 80);
+  $sunset-orange: rgb(224, 150, 118);
+  $sunset-yellow: rgb(224, 199, 154);
+  $sunset-green: rgb(190, 223, 169);
+  $sunset-blue: rgb(148, 181, 224);
+
+  $sunset-orange-darker: hsl(18, 63%, 55%);
+  $sunset-yellow-darker: hsl(39, 46%, 50%);
+  $sunset-green-darker: hsl(97, 46%, 33%);
+  $sunset-blue-darker: hsl(214, 55%, 55%);
+
+  --deepnight-darker: #{$deepnight-darker};
+  --deepnight-dark: #{$deepnight-dark};
+  --deepnight-normal: #{$deepnight-normal};
+  --deepnight-light: #{$deepnight-light};
+  --deepnight-lighter: #{$deepnight-lighter};
+  --deepnight-lightest: #{$deepnight-lightest};
+
+  --overcast-soft: #{$overcast-soft};
+  --overcast-light: #{$overcast-light};
+  --overcast-normal: #{$overcast-normal};
+  --overcast-dark: #{$overcast-dark};
+
+  --blossom-lighter: #{$blossom-lighter};
+  --blossom-light: #{$blossom-light};
+  --blossom-normal: #{$blossom-normal};
+  --blossom-dark: #{$blossom-dark};
+  --blossom-darker: #{$blossom-darker};
+
+  --sunset-red: #{$sunset-red};
+  --sunset-orange: #{$sunset-orange};
+  --sunset-yellow: #{$sunset-yellow};
+  --sunset-green: #{$sunset-green};
+  --sunset-blue: #{$sunset-blue};
+
+  --sunset-orange-darker: #{$sunset-orange-darker};
+  --sunset-yellow-darker: #{$sunset-yellow-darker};
+  --sunset-green-darker: #{$sunset-green-darker};
+  --sunset-blue-darker: #{$sunset-blue-darker};
+
+  --default-width: 864px;
 
   scrollbar-width: thin;
 

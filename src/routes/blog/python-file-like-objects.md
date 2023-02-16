@@ -6,7 +6,7 @@ date: "9/15/2022"
   import EmphasisBox from '$lib/components/EmphasisBox.svelte';
 </script>
 
-In my neverending quest for fully-specified, beautiful type annotations for Python, one domain that has constantly given me headaches is HTTP. On the face of it, it should be fairly simple, especially with the use of handy libraries like `requests`. However, once you get just beneath the surface of what appear to be placid waters, you find a frothing undercurrent. 
+In my neverending quest for fully-specified, beautiful type annotations for Python, one domain that has constantly given me headaches is HTTP. On the face of it, it should be fairly simple, especially with the use of handy libraries like `requests`. However, once you get just beneath the surface of what appear to be placid waters, you find a frothing undercurrent.
 
 I've been doing a bit of research into how HTTP requests are handled by the `requests` package in order to better understand what types are acceptable as the body of an HTTP request. Again, on the face of it, this seems straightforward---if it's HTTP, it better be serializable. But what exactly does that *mean* in Pythonic terms?
 
@@ -37,13 +37,12 @@ Down the rabbit hole we go!
 
 As described in the glossary snippet, we really have three subtypes of FLO to understand.
 
-```python
-class Foo:
+#### Text I/O
 
-    def __init__(self, some_var: str) -> None:
-        self._some_var = some_var
+#### Buffered (aka Binary) I/O
 
-    @property
-    def some_property(self) -> str:
-        return self._some_var
-```
+#### Raw (aka Unbuffered) I/O
+
+## Typing FLOs
+
+With all of the above, the solution to how we should type file-like objects is actually very straightforward. The `typing` package provides a base `IO` which can be made generic using `IO[AnyStr]`, as well as the aliases `TextIO` and `BinaryIO` for `IO[str]` and `IO[bytes]`, respectively. These all represent valid types of I/O streams that can be returned by the standard `open()` function.

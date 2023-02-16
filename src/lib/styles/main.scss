@@ -1,22 +1,30 @@
 @import './reset.scss';
 @import './theme.scss';
 @import './prism-theme.scss';
-@import './mixins.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
 
 body {
   margin: 0;
   background: var(--deepnight-darker);
+
+  // default typography
   color: var(--overcast-soft);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Fira Code Light', monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: -0.02rem;
 }
 
 main {
-  padding: 1rem;
   margin: 2rem auto;
-  max-width: 40rem;
+  padding: 1rem;
+  max-width: var(--default-width);
 
+  // global links
   a {
     --link: var(--blossom-darker);
     text-decoration: none;
@@ -25,50 +33,64 @@ main {
     color: inherit;
 
     transition: background 0.1s cubic-bezier(.33, .66, .66, 1);
-  
+
     &:hover {
       background: var(--link);
     }
   }
 
-  p {
-    padding: 8px 0;
-    line-height: 1.7em;
+  // global headers
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 8px
   }
-
-  p, h1, h2, h3, h4, h5, h6, span {
-    code {
-      font-size: 14px;
-      color: inherit;
-      border-radius: 0.3em;
-      padding: 4px 5px 6px;
-      white-space: nowrap;
-      background-color: var(--deepnight-normal);
-    }
-  }
-
-  @include headings {
-    margin-bottom: 8px;
-  }
-
-  h2, h3, h4, h5 {
+  h2, h3, h4, h5, h6 {
     margin-top: 16px;
   }
-  
+
+  // global paragraphs
+  p {
+    padding: 1em 0;
+  }
+
+  // date heading
   h4.date {
     font-weight: 500;
     margin-top: 0;
     color: var(--deepnight-lighter);
   }
 
-  hr {
-    color: var(--deepnight-light);
-  }
-
   blockquote {
     margin: 8px 0;
     padding: 0 8px;
     padding-left: 16px;
-    background-color: var(--deepnight-dark);
+  }
+
+  hr {
+    color: var(--deepnight-light);
+  }
+
+  // code block tokens
+  .token.punctuation {
+    margin: 0 1px;
+  }
+
+  // code blocks
+  pre[class*=language-] {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 0;
+    border-top: 1px solid var(--deepnight-normal);
+    border-bottom: 1px solid var(--deepnight-normal);
+  }
+
+  // inline code
+  p, h1, h2, h3, h4, h5, h6, span {
+    code {
+      color: var(--blossom-darker);
+      background: rgba(var(--blossom-dark), 0.15);
+      white-space: nowrap;
+      padding: 1px 4px;
+      font-family: 'Fira Code Light', monospace;
+    }
   }
 }

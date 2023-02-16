@@ -1,4 +1,4 @@
-<!-- 
+<!--
   Blog Post
  -->
 <script lang="ts">
@@ -15,3 +15,13 @@
   <!-- Then we use a dynamic component to push content -->
   <svelte:component this={data.content}/>
 </article>
+
+<style lang="scss">
+  article {
+    margin: 0 1.25em;
+  }
+
+  hr {
+    margin-bottom: 60px;
+  }
+</style>

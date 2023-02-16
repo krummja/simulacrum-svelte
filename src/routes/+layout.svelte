@@ -3,8 +3,8 @@
   import '$lib/styles/main.scss';
 </script>
 
-<Header />
 
+<Header />
 <main>
   <slot />
 </main>

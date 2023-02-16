@@ -1,11 +1,5 @@
 @import 'prism-theme-vars.scss';
 
-:root {
-  --prism-font-size: 0.9rem;
-  --prism-font-family: 'Fira Code', monospace;
-  --prism-block-margin-y: 1em;
-}
-
 html:not(.dark) {
   --prism-foreground: var(--deepnight-normal);
   --prism-background: var(--overcast-normal);
@@ -34,7 +28,7 @@ html:not(.dark) {
 
 html.dark {
   --prism-foreground: var(--overcast-normal);
-  --prism-background: var(--deepnight-dark);
+  --prism-background: var(--deepnight-darker);
   --prism-comment: var(--deepnight-lighter);
   --prism-string: var(--blossom-light);
   --prism-literal: var(--sunset-green);

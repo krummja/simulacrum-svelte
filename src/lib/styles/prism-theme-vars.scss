@@ -45,15 +45,15 @@
   --prism-marker-font-size: 0.8em;
 
   /* Font */
-  --prism-font-size: 1em;
+  --prism-font-size: 1rem;
   --prism-line-height: 1.5em;
-  --prism-font-family: monospace;
+  --prism-font-family: 'Fira Code Light', monospace;
   --prism-inline-font-size: var(--prism-font-size);
   --prism-block-font-size: var(--prism-font-size);
-  
+
   /* Sizing */
   --prism-tab-size: 2;
-  
+
   --prism-block-padding-x: 1em;
   --prism-block-padding-y: 1em;
   --prism-block-margin-x: 0;
