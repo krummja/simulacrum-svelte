@@ -1,16 +1,10 @@
-<!--
-  Blog Index
- -->
 <script lang="ts">
   import type { PageData } from "./$types";
   import BlogPost from '$lib/components/BlogPost.svelte';
   export let data: PageData;
 </script>
 
-<h1>Blog</h1>
-
 <div class="index-wrapper">
-
   <div class="blog-section posts-wrapper">
     {#each data.posts as post}
       <BlogPost
@@ -20,21 +14,13 @@
       />
     {/each}
   </div>
-
-  <!-- <div class="blog-section fragments-wrapper">
-    <h2>Fragments</h2>
-  </div>
-
-  <div class="blog-section series-wrapper">
-    <h2>Series</h2>
-  </div> -->
 </div>
 
 <style lang="scss">
   .blog-section {
     margin: 8px 0;
     padding: 0 16px;
-    background-color: var(--deepnight-dark);
+    background-color: var(--deepnight-normal);
   }
 
   .index-wrapper {

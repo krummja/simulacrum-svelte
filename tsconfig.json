@@ -9,6 +9,7 @@
 		"skipLibCheck": true,
 		"sourceMap": false,
 		"strict": true,
+		"strictNullChecks": false,
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

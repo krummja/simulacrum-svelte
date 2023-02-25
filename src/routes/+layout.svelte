@@ -6,5 +6,6 @@
 
 <Header />
 <main>
+  <div class="crt"></div>
   <slot />
 </main>

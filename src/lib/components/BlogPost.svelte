@@ -5,6 +5,6 @@
 </script>
 
 <div class="blog-post">
-  <h2><a href={path}>{title}</a></h2>
+  <h3><a href={path}>{title}</a></h3>
   <h4 class="date">Published {date}</h4>
 </div>

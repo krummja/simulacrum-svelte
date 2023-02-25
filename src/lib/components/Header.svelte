@@ -3,11 +3,12 @@
     <a href="/">simulacrum.space</a>
 
     <nav>
+      <!-- <a href="/testing">Testing</a> -->
       <a href="/blog">Blog</a>
-      <a href="/testing">Testing</a>
     </nav>
   </div>
 </header>
+
 
 <style lang="scss">
   header {
@@ -15,14 +16,16 @@
     flex-wrap: wrap;
     margin: 0 auto;
     padding: 1rem 1rem;
-    max-width: var(--default-width);
-    // background: var(--deepnight-dark);
+    height: 60px;
+    width: 100%;
+
+    background-color: var(--deepnight-darker);
 
     nav {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      min-width: 130px;
+      // min-width: 130px;
     }
 
     a {
@@ -36,6 +39,7 @@
       width: 100%;
       margin: auto;
       justify-content: space-between;
+      max-width: var(--default-width);
     }
   }
 </style>
