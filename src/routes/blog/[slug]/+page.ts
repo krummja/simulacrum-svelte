@@ -10,4 +10,4 @@ export const load: PageLoad = async ({ params }: { params: any }) => {
     title,
     date,
   };
-}
+};

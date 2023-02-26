@@ -1,0 +1,147 @@
+@use "sass:list";
+
+@import "../reset";
+@import "../palette";
+@import "./typography";
+@import "./model";
+@import '../prism-theme.scss';
+
+:root {
+  --deepnight-darker: rgba(#{$deepnight-darker}, 1.0);
+  --deepnight-dark: rgba(#{$deepnight-dark}, 1.0);
+  --deepnight-normal: rgba(#{$deepnight-normal}, 1.0);
+  --deepnight-light: rgba(#{$deepnight-light}, 1.0);
+  --deepnight-lighter: rgba(#{$deepnight-lighter}, 1.0);
+  --deepnight-lightest: rgba(#{$deepnight-lightest}, 1.0);
+
+  --overcast-soft: rgba(#{$overcast-soft}, 1.0);
+  --overcast-light: rgba(#{$overcast-light}, 1.0);
+  --overcast-normal: rgba(#{$overcast-normal}, 1.0);
+  --overcast-dark: rgba(#{$overcast-dark}, 1.0);
+
+  --blossom-lighter: rgba(#{$blossom-lighter}, 1.0);
+  --blossom-light: rgba(#{$blossom-light}, 1.0);
+  --blossom-normal: rgba(#{$blossom-normal}, 1.0);
+  --blossom-dark: rgba(#{$blossom-dark}, 1.0);
+  --blossom-darker: rgba(#{$blossom-darker}, 1.0);
+
+  --sunset-red: rgba(#{$sunset-red}, 1.0);
+  --sunset-orange: rgba(#{$sunset-orange}, 1.0);
+  --sunset-yellow: rgba(#{$sunset-yellow}, 1.0);
+  --sunset-green: rgba(#{$sunset-green}, 1.0);
+  --sunset-blue: rgba(#{$sunset-blue}, 1.0);
+
+  --sunset-orange-darker: rgba(#{$sunset-orange-darker}, 1.0);
+  --sunset-yellow-darker: rgba(#{$sunset-yellow-darker}, 1.0);
+  --sunset-green-darker: rgba(#{$sunset-green-darker}, 1.0);
+  --sunset-blue-darker: rgba(#{$sunset-blue-darker}, 1.0);
+
+  --header-height: 50px;
+  --gutter-width: 1rem;
+  --default-width: 864px;
+
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 3px solid var(--blossom-light);
+  }
+
+  font-family: "Fira Code Light", monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: -0.02rem;
+}
+
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+
+  &.dark {
+    --c-bg: var(--deepnight-dark);
+    --c-bg-darker: var(--deepnight-darker);
+    --fg: var(--overcast-soft);
+    --fg-soft: var(--blossom-light);
+    --fg-softer: var(--blossom-lighter);
+  }
+
+  &:not(.dark) {
+    --c-bg: var(--overcast-soft);
+    --c-bg-darker: var(--overcast-dark);
+    --fg: var(--deepnight-dark);
+    --fg-soft: var(--blossom-darker);
+    --fg-softer: var(--blossom-dark);
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--fg);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  // Link styles for main content
+  a {
+    --link: var(--blossom-darker);
+    text-decoration: none;
+    border-bottom: 3px solid var(--link);
+    box-shadow: inset 0 -4 0 var(--link);
+    color: inherit;
+
+    transition: background 0.1s cubic-bezier(.33, .66, .66, 1);
+
+    &:hover {
+      background: var(--link);
+    }
+  }
+
+  blockquote {
+    margin: 8px 0;
+    padding: 0 8px;
+    padding-left: 16px;
+  }
+
+  hr {
+    color: var(--deepnight-light);
+  }
+
+  // code block tokens
+  .token.punctuation {
+    margin: 0 1px;
+  }
+
+  // code blocks
+  pre[class*=language-] {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 0;
+    border-top: 1px solid var(--deepnight-normal);
+    border-bottom: 1px solid var(--deepnight-normal);
+    background: none;
+  }
+
+  // inline code
+  p, h1, h2, h3, h4, h5, h6, span {
+    code {
+      color: var(--blossom-normal);
+      background: rgba(
+        list.nth($blossom-dark, 1),
+        list.nth($blossom-dark, 2),
+        list.nth($blossom-dark, 3),
+        0.15,
+      );
+      white-space: nowrap;
+      padding: 1px 4px;
+      font-family: 'Fira Code Light', monospace;
+    }
+  }
+}

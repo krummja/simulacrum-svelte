@@ -1,0 +1,10 @@
+
+.model {
+  &--default {
+    max-width: var(--default-width);
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

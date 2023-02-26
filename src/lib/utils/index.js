@@ -11,3 +11,16 @@ export const fetchMarkdownPosts = async () => {
     }));
     return allPosts;
 };
+export const fetchDesignPages = async () => {
+    const allDesignPages = import.meta.glob('/src/routes/designs/*.md');
+    const iterableDesignPages = Object.entries(allDesignPages);
+    const allPages = await Promise.all(iterableDesignPages.map(async ([path, resolver]) => {
+        const { metadata } = await resolver();
+        const pagePath = path.slice(11, -3);
+        return {
+            meta: metadata,
+            path: pagePath,
+        };
+    }));
+    return allPages;
+};
