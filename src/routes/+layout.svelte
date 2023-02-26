@@ -1,11 +1,24 @@
-<script lang="ts">
-  import Header from '$lib/components/Header.svelte';
-  import '$lib/styles/main.scss';
-</script>
-
-
 <Header />
 <main>
   <div class="crt"></div>
-  <slot />
+  <div class="content model--default type--standard">
+    <slot />
+  </div>
 </main>
+
+
+<script lang="ts">
+import "$lib/styles/dev/main.scss";
+import "$lib/styles/crt.scss";
+import Header from "$lib/components/dev/Header.svelte";
+</script>
+
+
+<style lang="scss">
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 18px;
+    width: 100%;
+  }
+</style>

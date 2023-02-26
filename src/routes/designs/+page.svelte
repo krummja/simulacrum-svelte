@@ -1,10 +1,9 @@
 <div class="index-wrapper">
   <div class="item-wrapper">
-    {#each data.posts as post}
-      <BlogPost
-        title={post.meta.title}
-        date={post.meta.date}
-        path={post.path}
+    {#each data.designs as design}
+      <DesignPage
+        title={design.meta.title}
+        path={design.path}
       />
     {/each}
   </div>
@@ -13,7 +12,7 @@
 
 <script lang="ts">
   import type { PageData } from "./$types";
-  import BlogPost from '$lib/components/core/BlogPost.svelte';
+  import DesignPage from "$lib/components/dev/DesignPage.svelte";
   export let data: PageData;
 </script>
 
