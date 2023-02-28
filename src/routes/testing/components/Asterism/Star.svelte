@@ -5,17 +5,17 @@
 
   let ref: SVGCircleElement;
 
-  export let node: Types.NodeInfo;
+  export let star: Types.Star;
 
   onMount(() => {
-    if (ref) select(ref).data([node]);
-  });
+    if (ref) select(ref).data([star]);
+  })
 </script>
 
 
 <circle
-  class="node"
-  r={node.radiusSize}
-  fill={node.fillColor}
+  class="star"
+  r={star.radius}
+  fill={star.fill}
   bind:this={ref}
 ></circle>

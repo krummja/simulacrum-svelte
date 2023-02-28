@@ -1,3 +1,9 @@
+<script lang="ts">
+import "$lib/styles/dev/main.scss";
+import "$lib/styles/crt.scss";
+import Header from "$lib/components/dev/Header.svelte";
+</script>
+
 <Header />
 <main>
   <div class="crt"></div>
@@ -5,14 +11,6 @@
     <slot />
   </div>
 </main>
-
-
-<script lang="ts">
-import "$lib/styles/dev/main.scss";
-import "$lib/styles/crt.scss";
-import Header from "$lib/components/dev/Header.svelte";
-</script>
-
 
 <style lang="scss">
   .content {

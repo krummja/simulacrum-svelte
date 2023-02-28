@@ -5,8 +5,4 @@ export const GET = async () => {
   const allPages = await fetchDesignPages();
 
   return json(allPages);
-
-  // const sortedPages = allPages.sort((a, b) => {
-
-  // })
 };

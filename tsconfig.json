@@ -10,6 +10,7 @@
 		"sourceMap": false,
 		"strict": true,
 		"strictNullChecks": false,
+		"experimentalDecorators": true,
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

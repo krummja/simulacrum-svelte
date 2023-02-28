@@ -1,7 +1,7 @@
 <header class="model--default">
   <a class="title" href="/">simulacrum.space</a>
   <nav>
-    <a href="/blog">Blog</a>
+    <a href="/garden">Garden</a>
     <a href="/designs">Designs</a>
   </nav>
 </header>
@@ -13,7 +13,7 @@
     flex-wrap: auto;
     flex-direction: row;
     margin: 0 auto 1rem auto;
-    padding: 1rem 0;
+    padding: 1rem 0 3rem 0;
     height: var(--header-height);
     justify-content: space-between;
 
@@ -29,7 +29,13 @@
 
     a {
       text-decoration: none;
-      color: inherit
+      color: inherit;
+
+      transition: color 0.1s cubic-bezier(.33, .66, .66, 1);
+
+      &:hover {
+        color: var(--blossom-normal);
+      }
     }
   }
 </style>

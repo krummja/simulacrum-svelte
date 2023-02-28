@@ -154,7 +154,6 @@
   }
 </script>
 
-
 <svg
   bind:this={bindInitZoom}
   class="container"
@@ -170,7 +169,6 @@
     <Labels nodeData={activeData.nodes} />
   </g>
 </svg>
-
 
 <style>
   .container {

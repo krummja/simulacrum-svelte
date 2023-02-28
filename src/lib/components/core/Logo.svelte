@@ -47,7 +47,6 @@ onMount(() => {
 });
 </script>
 
-
 <div bind:this={container}>
   <div class="logo">
     <svg

@@ -9,7 +9,6 @@
   </div>
 </header>
 
-
 <style lang="scss">
   header {
     display: flex;
