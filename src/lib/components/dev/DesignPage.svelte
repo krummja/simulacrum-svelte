@@ -11,7 +11,11 @@
 
 <style lang="scss">
   .design-page {
-    padding: 16px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: var(--deepnight-normal);
+
+    padding: 16px;
   }
 </style>
