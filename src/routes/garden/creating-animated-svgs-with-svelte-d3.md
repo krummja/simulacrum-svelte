@@ -1,5 +1,5 @@
 ---
-title: Creating Animated SVGs with Svelte and d3.js
+title: Creating Animated SVGs with Svelte and D3
 date: "2/27/2023"
 ---
 
