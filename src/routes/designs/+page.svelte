@@ -21,7 +21,6 @@
   .item-wrapper {
     margin: 8px 0;
     padding: 0 16px;
-    background-color: var(--deepnight-normal);
   }
 
   .index-wrapper {

@@ -12,5 +12,6 @@
 <style lang="scss">
   .design-page {
     padding: 16px 0;
+    background-color: var(--deepnight-normal);
   }
 </style>
