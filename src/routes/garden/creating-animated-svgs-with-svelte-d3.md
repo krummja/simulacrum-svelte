@@ -101,6 +101,7 @@ In this example, I am using the `select` function provided by D3 to animate the 
 
   onMount(() => {
     el = select("#d3-example");
+    // animation logic
   });
 </script>
 
