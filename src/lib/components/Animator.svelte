@@ -2,12 +2,13 @@
   import { onMount } from "svelte";
   import { select } from "d3";
 
-  let target: HTMLElement;
+  export let update: (dt: number) => void;
 
   onMount(() => {
-  });
+    update(0);
+  })
 </script>
 
 <div class="animator">
-  <svelte:component />
+  <slot />
 </div>

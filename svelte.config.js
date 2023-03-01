@@ -1,12 +1,14 @@
 import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// import { remark } from 'remark';
+// import toc from 'remark-toc';
+import toc from '@jsdevtools/rehype-toc';
+import autolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import rehypeParse from 'rehype-parse';
+import rehypeStringify from 'rehype-stringify';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const mdLayout = path.join(__dirname, './src/lib/components/Layout.svelte');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -23,9 +25,23 @@ const config = {
 		preprocess(),
 		mdsvex({
 			extensions: ['.md'],
-			layout: {
-				// garden: mdLayout,
-			},
+			// remarkPlugins: [[toc, {heading: 'contents'}]],
+			rehypePlugins: [
+				rehypeSlug,
+				autolinkHeadings,
+				// rehypeParse,
+				rehypeStringify,
+				[
+					toc, {
+						cssClasses: {
+							toc: 'outline'
+						},
+					}
+				],
+			],
+			smartypants: {
+				dashes: 'oldschool',
+			}
 		}),
 	],
 };

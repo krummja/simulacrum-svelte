@@ -6,37 +6,17 @@ date: "2/27/2023"
 <script lang="ts">
   import { select } from "d3";
   import { onMount, afterUpdate } from "svelte";
+  import { AnimationLoop } from "$lib/utils/animation";
 
   let debug = false;
   let el: HTMLElement;
-
-  let fps = 60;
-  let start = Date.now();
-  let frameDuration = 1_000_000 / fps;
-  let frameLag = 0;
+  let animation = new AnimationLoop({fps: 60, frameDuration: 1_000_000});
 
   onMount(() => {
     el = select("#d3-example");
-    update();
+    animation.updaters.push(update);
+    animation.loop();
   })
-
-  afterUpdate(() => {
-    (function loop() {
-      requestAnimationFrame(loop);
-
-      let current = Date.now();
-      let elapsed = current - start;
-      start = current;
-      frameLag += elapsed;
-
-      while (frameLag >= frameDuration) {
-        frameLag -= frameDuration;
-      }
-
-      let dt = frameLag / frameDuration;
-      update(dt);
-    })();
-  });
 
   const update = (dt: number) => {
     el.style("background-color", () => {
@@ -49,9 +29,9 @@ A major consideration in building my personal site was support for nice looking 
 
 After a decent bit of trial and error (and perhaps some github trawling for similar use cases) I think I've found a method that permits authoring highly granular animations as Svelte components.
 
-I wanted to start putting this to use by designing an important graphical element for my site: the asterism icons that will represent the developmental stages of my digital garden. In a rare stroke of insight, I remembered to start writing this post *before* getting into the weeds on the project, therefore allowing me to document as I think rather than having to piece together my thought process looking back. This said, let's get into it.
+I wanted to start putting this to use by designing an important graphical element for my site: the asterism icons that will represent the developmental stages of my digital garden. In a rare stroke of insight, I remembered to start writing this post *before* getting into the weeds on the project, allowing me to document as I think rather than having to piece together my thought process looking back. This said, let's get into it.
 
-## Svelte components rule
+# Svelte components rule
 
 Svelte is an component-based front-end framework that compiles down to small, stand-alone JavaScript modules so that it works fast as hell in the browser. Its syntax is also relatively terse, in that it doesn't require a ton of extra boilerplate to build a component.
 
@@ -78,7 +58,8 @@ Inside the `<script>` block, the following basic principles apply:
 
 There are a few additional caveats that govern the use of these principles, but that's the basic idea.
 
-## D3 is beyond the ken of mortal men
+
+# D3 is black magic
 
 D3.js is an extremely powerful library that lets you bind arbitrary data to the DOM. You can then apply transformations to the document to bend it to your will. Instead of the imperative approach required to modify the DOM using the built-in API, D3 lets you write declarative code that operates on selections of nodes.
 
@@ -86,7 +67,7 @@ While D3 allows manipulation of virtually any piece of the DOM, we'll primarily 
 
 <div class="figure" id="d3-example" style="height: 100px;">
   {#if debug}
-  <span style="background: #000">{frameDuration}</span>
+  <span style="background: #000">{animation.frameDuration}</span>
   {/if}
 </div>
 
@@ -108,3 +89,27 @@ In this example, I am using the `select` function provided by D3 to animate the 
 <div id="d3-example"></div>
 ```
 
+That's pretty simple and could just as well be done with other, more conventional methods of controlling element styles programmatically. What makes D3 especially powerful is the ability to modify an entire selection set at once. Compare the imperative style required for conventional element manipulation:
+
+```js
+const paragraphs = document.getElementsByTagName("p");
+for (let i = 0; i < paragraphs.length; i++) {
+  const paragraph = paragraphs.item(i);
+  paragraph.style.setProperty("color", "blue", null);
+}
+```
+
+Compare that to D3's declarative selection style:
+
+```js
+d3.selectAll("p").style("color", "blue");
+```
+
+Doesn't that absolutely *slap*?
+
+Alright, so that's the basic idea behind D3. Let's roll up our sleeves and get to work for real now.
+
+
+# Designing a reactive D3 element
+
+[WIP]
