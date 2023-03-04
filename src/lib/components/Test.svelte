@@ -5,6 +5,5 @@
   export { background };
 </script>
 
-
 <div bind:this={ref} style={`background-color: ${background};`}>
 </div>

@@ -1,3 +1,7 @@
+<script lang="ts">
+  export let show: boolean = true;
+</script>
+
 <div class="container">
   {#if show}
     <div class="sidebar">
@@ -5,12 +9,6 @@
     </div>
   {/if}
 </div>
-
-
-<script lang="ts">
-export let show: boolean = true;
-</script>
-
 
 <style lang="scss">
   .container {

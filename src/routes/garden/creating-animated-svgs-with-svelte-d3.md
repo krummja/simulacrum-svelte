@@ -1,28 +1,48 @@
 ---
 title: Creating Animated SVGs with Svelte and D3
 date: "2/27/2023"
+stage: 1
 ---
 
 <script lang="ts">
   import { select } from "d3";
   import { onMount, afterUpdate } from "svelte";
   import { AnimationLoop } from "$lib/utils/animation";
+  import ProgressBlock from '$lib/components/dev/ProgressBlock.svelte';
 
   let debug = false;
-  let el: HTMLElement;
+  let colorDiv: HTMLElement;
+  let asterism: SVGElement;
   let animation = new AnimationLoop({fps: 60, frameDuration: 1_000_000});
 
   onMount(() => {
-    el = select("#d3-example");
-    animation.updaters.push(update);
+    colorDiv = select("#d3-example");
+    animation.updaters.push(randomColorUpdate);
     animation.loop();
   })
 
-  const update = (dt: number) => {
-    el.style("background-color", () => {
+  const randomColorUpdate = (dt: number) => {
+    colorDiv.style("background-color", () => {
       return "hsl(" + dt * 360 + ",100%,50%)";
     });
   }
+
+  // const particleCount = 10;
+
+  // const svg = select("#asterism");
+  // const container = svg.append("g")
+  //   .attr("class", "axis")
+  //   .attr("transform", "translate(250, 250)");
+
+  // const node = container.append("g");
+  // const particles = new Array(particleCount);
+
+  // const asterismUpdate = (dt: number) => {
+  //   for (let i = 0, i < particleCount; i++)
+  //   {
+
+  //   }
+  // }
 </script>
 
 A major consideration in building my personal site was support for nice looking animations, ideally using a transformation library like [D3.js](https://d3js.org) to manipulate SVGs. Because I had decided to build the latest iteration of my website using [SvelteKit](https://kit.svelte.dev), I wanted to be able to leverage the component architecture of my frontend framework in a way that would work together with and reinforce the features of whatever animation library I chose.
@@ -112,4 +132,4 @@ Alright, so that's the basic idea behind D3. Let's roll up our sleeves and get t
 
 # Designing a reactive D3 element
 
-[WIP]
+<ProgressBlock />

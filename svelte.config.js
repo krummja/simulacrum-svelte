@@ -25,19 +25,11 @@ const config = {
 		preprocess(),
 		mdsvex({
 			extensions: ['.md'],
-			// remarkPlugins: [[toc, {heading: 'contents'}]],
 			rehypePlugins: [
 				rehypeSlug,
 				autolinkHeadings,
-				// rehypeParse,
 				rehypeStringify,
-				[
-					toc, {
-						cssClasses: {
-							toc: 'outline'
-						},
-					}
-				],
+				[toc, { cssClasses: { toc: 'outline' } }],
 			],
 			smartypants: {
 				dashes: 'oldschool',

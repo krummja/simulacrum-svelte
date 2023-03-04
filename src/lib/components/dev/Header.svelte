@@ -6,7 +6,6 @@
   </nav>
 </header>
 
-
 <style lang="scss">
   header {
     display: flex;

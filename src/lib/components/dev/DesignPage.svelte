@@ -1,13 +1,11 @@
-<div class="design-page">
-  <h3><a href={path}>{title}</a></h3>
-</div>
-
-
 <script lang="ts">
   export let title: string;
   export let path: string;
 </script>
 
+<div class="design-page">
+  <h3><a href={path}>{title}</a></h3>
+</div>
 
 <style lang="scss">
   .design-page {

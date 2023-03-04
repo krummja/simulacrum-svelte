@@ -1,33 +1,28 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  let iconRef: HTMLElement;
+  import CultivatedIcon from "$lib/components/dev/CultivatedIcon.svelte";
 
   export let title: string;
   export let date: string;
   export let path: string;
-  export let stage: string;
+  export let stage: number;
 
-  const iconClass = () => {
-    switch (stage) {
-      case "seed":
-        // iconRef.style.width = "10px";
-        // iconRef.style.backgroundColor = "var(--sunset-green)";
-      default:
-        return "unknown";
-    }
-  }
+  const stages = [
+    "Planting",
+    "Cultivating",
+    "Flourishing",
+  ];
 
-  onMount(() => {
-    iconClass();
-  })
+  const stageText = stages[stage];
 </script>
 
 <div class="blog-post">
   <div class="info-wrapper">
     <h3><a href={path}>{title}</a></h3>
-    <h4 class="date">Published {date}</h4>
+    <h4 class="date">{stageText} ● Published {date}</h4>
   </div>
-  <div class="icon" bind:this={iconRef}></div>
+  <div class="icon">
+    <CultivatedIcon stage={stage} />
+  </div>
 </div>
 
 <style lang="scss">
@@ -43,7 +38,7 @@
     .date {
       margin-top: 8px;
       font-weight: 300;
-      color: var(--deepnight-lighter);
+      color: var(--deepnight-lightest);
     }
 
     .icon {
