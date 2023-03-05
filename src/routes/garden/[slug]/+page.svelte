@@ -28,14 +28,14 @@
   }
 
   :global(article h1) {
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
   }
 
   :global(article h2) {
-    margin-top: 1rem;
+    margin-top: 2.5rem;
   }
 
   :global(article h3) {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
 </style>

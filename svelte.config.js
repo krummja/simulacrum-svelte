@@ -8,6 +8,21 @@ import autolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import rehypeParse from 'rehype-parse';
 import rehypeStringify from 'rehype-stringify';
+// import rehypeKatex from 'rehype-katex';
+import rehypeKatex from 'rehype-katex-svelte';
+import remarkMath from 'remark-math';
+import rehypeDocument from 'rehype-document';
+
+
+const tocOptions = {
+	cssClasses: {
+		toc: 'outline',
+		list: 'outline-level',
+		listItem: 'outline-item',
+		link: 'outline-link'
+	},
+	placeholder: "TOC",
+};
 
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -25,19 +40,16 @@ const config = {
 		preprocess(),
 		mdsvex({
 			extensions: ['.md'],
+			remarkPlugins: [
+				remarkMath,
+			],
 			rehypePlugins: [
 				rehypeSlug,
 				autolinkHeadings,
-				rehypeStringify,
-				[toc, {
-					cssClasses: {
-						toc: 'outline',
-						list: 'outline-level',
-						listItem: 'outline-item',
-						link: 'outline-link'
-					},
-					placeholder: "TOC",
-				}],
+				// rehypeParse,
+				rehypeKatex,
+				// rehypeStringify,
+				[toc, tocOptions],
 			],
 			smartypants: {
 				dashes: 'oldschool',

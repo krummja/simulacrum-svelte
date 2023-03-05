@@ -124,6 +124,7 @@ That's pretty simple and could just as well be done with other, more conventiona
 
 ```js
 const paragraphs = document.getElementsByTagName("p");
+
 for (let i = 0; i < paragraphs.length; i++) {
   const paragraph = paragraphs.item(i);
   paragraph.style.setProperty("color", "blue", null);

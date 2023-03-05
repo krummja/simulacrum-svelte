@@ -1,10 +1,24 @@
 ---
 title: Python File-Like Objects
 date: "9/15/2022"
+stage: 0
+tags:
+  - python
+  - explorations
 ---
+
 <script lang="ts">
-  import EmphasisBox from '$lib/components/EmphasisBox.svelte';
+  import EmphasisBox from '$lib/components/core/EmphasisBox.svelte';
+  import ProgressBlock from '$lib/components/dev/ProgressBlock.svelte';
+  import StickyNav from '$lib/components/dev/StickyNav.svelte';
+  import { page } from '$app/stores';
 </script>
+
+<StickyNav page={$page}>
+
+TOC
+
+</StickyNav>
 
 In my neverending quest for fully-specified, beautiful type annotations for Python, one domain that has constantly given me headaches is HTTP. On the face of it, it should be fairly simple, especially with the use of handy libraries like `requests`. However, once you get just beneath the surface of what appear to be placid waters, you find a frothing undercurrent.
 
@@ -30,8 +44,9 @@ Okay, hyperbole aside, the term **file-like object** is standard parlance in Pyt
 
 </EmphasisBox>
 
-
 Down the rabbit hole we go!
+
+<ProgressBlock />
 
 ### The `io` module
 

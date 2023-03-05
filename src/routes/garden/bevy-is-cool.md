@@ -1,7 +1,24 @@
 ---
 title: Bevy is really fuckin' cool
 date: "02/16/2023"
+stage: 0
+tags:
+  - rust
+  - gamedev
 ---
+
+<script lang="ts">
+  import EmphasisBox from '$lib/components/core/EmphasisBox.svelte';
+  import ProgressBlock from '$lib/components/dev/ProgressBlock.svelte';
+  import StickyNav from '$lib/components/dev/StickyNav.svelte';
+  import { page } from '$app/stores';
+</script>
+
+<StickyNav page={$page}>
+
+TOC
+
+</StickyNav>
 
 
 ```rust
@@ -29,3 +46,5 @@ impl From<TestMesh> for Mesh {
     }
 }
 ```
+
+<ProgressBlock />
