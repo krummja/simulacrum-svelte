@@ -6,6 +6,8 @@
 @import "./model";
 @import '../prism-theme.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
 :root {
   --deepnight-darker: rgba(#{$deepnight-darker}, 1.0);
   --deepnight-dark: rgba(#{$deepnight-dark}, 1.0);

@@ -1,8 +1,6 @@
-<!--
-  Blog Post
- -->
 <script lang="ts">
   import type { PageData } from './$types';
+  import StickyNav from '$lib/components/dev/StickyNav.svelte';
   export let data: PageData;
 </script>
 
@@ -23,5 +21,17 @@
 
   hr {
     margin-bottom: 30px;
+  }
+
+  :global(article h1) {
+    margin-top: 1.5rem;
+  }
+
+  :global(article h2) {
+    margin-top: 1rem;
+  }
+
+  :global(article h3) {
+    margin-top: 2rem;
   }
 </style>

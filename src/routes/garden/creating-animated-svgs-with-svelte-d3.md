@@ -9,6 +9,8 @@ stage: 1
   import { onMount, afterUpdate } from "svelte";
   import { AnimationLoop } from "$lib/utils/animation";
   import ProgressBlock from '$lib/components/dev/ProgressBlock.svelte';
+  import StickyNav from '$lib/components/dev/StickyNav.svelte';
+  import { page } from '$app/stores';
 
   let debug = false;
   let colorDiv: HTMLElement;
@@ -44,6 +46,12 @@ stage: 1
   //   }
   // }
 </script>
+
+<StickyNav page={$page}>
+
+TOC
+
+</StickyNav>
 
 A major consideration in building my personal site was support for nice looking animations, ideally using a transformation library like [D3.js](https://d3js.org) to manipulate SVGs. Because I had decided to build the latest iteration of my website using [SvelteKit](https://kit.svelte.dev), I wanted to be able to leverage the component architecture of my frontend framework in a way that would work together with and reinforce the features of whatever animation library I chose.
 
@@ -83,6 +91,8 @@ There are a few additional caveats that govern the use of these principles, but 
 
 D3.js is an extremely powerful library that lets you bind arbitrary data to the DOM. You can then apply transformations to the document to bend it to your will. Instead of the imperative approach required to modify the DOM using the built-in API, D3 lets you write declarative code that operates on selections of nodes.
 
+## Test H2 Element
+
 While D3 allows manipulation of virtually any piece of the DOM, we'll primarily be using it to control SVG markup.
 
 <div class="figure" id="d3-example" style="height: 100px;">
@@ -90,6 +100,8 @@ While D3 allows manipulation of virtually any piece of the DOM, we'll primarily 
   <span style="background: #000">{animation.frameDuration}</span>
   {/if}
 </div>
+
+### Test H3 Element
 
 In this example, I am using the `select` function provided by D3 to animate the fill color of a `div`.
 

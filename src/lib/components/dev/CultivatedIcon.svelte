@@ -21,7 +21,6 @@
 </div>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
   .icon {
     display: flex;
     flex-direction: row;
@@ -32,6 +31,6 @@
     margin-right: 20px;
     font-family: "Rampart One";
     font-weight: bold;
-    font-size: 42pt;
+    font-size: 38pt;
   }
 </style>

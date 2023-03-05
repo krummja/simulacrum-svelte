@@ -3,7 +3,7 @@ import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 // import { remark } from 'remark';
 // import toc from 'remark-toc';
-import toc from '@jsdevtools/rehype-toc';
+import toc from '@atomictech/rehype-toc';
 import autolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import rehypeParse from 'rehype-parse';
@@ -29,7 +29,15 @@ const config = {
 				rehypeSlug,
 				autolinkHeadings,
 				rehypeStringify,
-				[toc, { cssClasses: { toc: 'outline' } }],
+				[toc, {
+					cssClasses: {
+						toc: 'outline',
+						list: 'outline-level',
+						listItem: 'outline-item',
+						link: 'outline-link'
+					},
+					placeholder: "TOC",
+				}],
 			],
 			smartypants: {
 				dashes: 'oldschool',
