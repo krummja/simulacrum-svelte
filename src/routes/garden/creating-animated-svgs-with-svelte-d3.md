@@ -2,6 +2,9 @@
 title: Creating Animated SVGs with Svelte and D3
 date: "2/27/2023"
 stage: 1
+tags:
+  - svelte
+  - d3
 ---
 
 <script lang="ts">
@@ -91,8 +94,6 @@ There are a few additional caveats that govern the use of these principles, but 
 
 D3.js is an extremely powerful library that lets you bind arbitrary data to the DOM. You can then apply transformations to the document to bend it to your will. Instead of the imperative approach required to modify the DOM using the built-in API, D3 lets you write declarative code that operates on selections of nodes.
 
-## Test H2 Element
-
 While D3 allows manipulation of virtually any piece of the DOM, we'll primarily be using it to control SVG markup.
 
 <div class="figure" id="d3-example" style="height: 100px;">
@@ -100,8 +101,6 @@ While D3 allows manipulation of virtually any piece of the DOM, we'll primarily 
   <span style="background: #000">{animation.frameDuration}</span>
   {/if}
 </div>
-
-### Test H3 Element
 
 In this example, I am using the `select` function provided by D3 to animate the fill color of a `div`.
 

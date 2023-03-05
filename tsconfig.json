@@ -12,6 +12,7 @@
 		"strictNullChecks": false,
 		"experimentalDecorators": true,
 		"outDir": "build",
+		"downlevelIteration": true,
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

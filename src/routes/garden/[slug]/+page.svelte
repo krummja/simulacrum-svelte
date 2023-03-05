@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import StickyNav from '$lib/components/dev/StickyNav.svelte';
+  import Tag from '$lib/components/dev/Tag.svelte';
+  import Tags from '$lib/components/dev/Tags.svelte';
   export let data: PageData;
 </script>
 
@@ -8,6 +9,9 @@
   <!-- Metadata is rendered up here -->
   <h1 class="title">{data.title}</h1>
   <h4 class="date">Published {data.date}</h4>
+
+  <!-- <Tags tags={data.tags} /> -->
+
   <hr/>
 
   <!-- Then we use a dynamic component to push content -->

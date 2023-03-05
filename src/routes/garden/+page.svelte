@@ -5,7 +5,7 @@
   export let data: PageData;
 </script>
 
-<FilterBar />
+<!-- <FilterBar /> -->
 <div class="index-wrapper">
   <div class="item-wrapper">
     {#each data.posts as post}
@@ -14,6 +14,7 @@
         date={post.meta.date}
         stage={post.meta.stage}
         path={post.path}
+        tags={post.meta.tags}
       />
     {/each}
   </div>

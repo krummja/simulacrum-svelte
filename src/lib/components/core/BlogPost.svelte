@@ -1,10 +1,12 @@
 <script lang="ts">
   import CultivatedIcon from "$lib/components/dev/CultivatedIcon.svelte";
+  import Tags from "$lib/components/dev/Tags.svelte";
 
   export let title: string;
   export let date: string;
   export let path: string;
   export let stage: number;
+  export let tags: string[];
 
   const stages = [
     "Planting",
@@ -19,6 +21,7 @@
   <div class="info-wrapper">
     <h3><a href={path}>{title}</a></h3>
     <h4 class="date">{stageText} ● Published {date}</h4>
+    <!-- <Tags tags={tags} /> -->
   </div>
   <div class="icon">
     <CultivatedIcon stage={stage} />
