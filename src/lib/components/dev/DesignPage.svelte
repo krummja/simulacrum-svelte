@@ -15,5 +15,6 @@
     background-color: var(--deepnight-normal);
 
     padding: 16px;
+    margin: 8px 0;
   }
 </style>

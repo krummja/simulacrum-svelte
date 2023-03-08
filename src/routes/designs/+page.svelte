@@ -1,3 +1,9 @@
+<script lang="ts">
+  import type { PageData } from "./$types";
+  import DesignPage from "$lib/components/dev/DesignPage.svelte";
+  export let data: PageData;
+</script>
+
 <div class="index-wrapper">
   <div class="item-wrapper">
     {#each data.designs as design}
@@ -8,14 +14,6 @@
     {/each}
   </div>
 </div>
-
-
-<script lang="ts">
-  import type { PageData } from "./$types";
-  import DesignPage from "$lib/components/dev/DesignPage.svelte";
-  export let data: PageData;
-</script>
-
 
 <style lang="scss">
   .item-wrapper {
