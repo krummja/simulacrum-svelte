@@ -7,6 +7,10 @@
 </header>
 
 <style lang="scss">
+  .title {
+    height: 30px;
+  }
+
   header {
     display: flex;
     flex-wrap: auto;
@@ -21,6 +25,8 @@
       flex-direction: row;
       justify-content: space-between;
 
+      height: 30px;
+
       & > a + a {
         margin-inline-start: 3rem;
       }
@@ -29,6 +35,7 @@
     a {
       text-decoration: none;
       color: inherit;
+      height: 50px;
 
       transition: color 0.1s cubic-bezier(.33, .66, .66, 1);
 
