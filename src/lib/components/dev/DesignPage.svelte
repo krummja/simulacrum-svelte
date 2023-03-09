@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: var(--deepnight-normal);
+    background-color: var(--bg-secondary);
 
     padding: 16px;
     margin: 8px 0;

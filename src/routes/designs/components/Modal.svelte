@@ -26,7 +26,6 @@
 
 <style lang="scss">
   button {
-    --link: var(--blossom-darker);
     text-decoration: none;
     border-bottom: 3px solid var(--link);
     box-shadow: inset 0 -4 0 var(--link);
@@ -58,7 +57,7 @@
     margin: 8px 32px;
     padding: 16px;
     z-index: 3;
-    background-color: var(--deepnight-normal);
-    box-shadow: 4px 4px 2px 1px var(--deepnight-darker);
+    background-color: var(--bg-secondary);
+    box-shadow: 4px 4px 2px 1px var(--c-bg-contrast);
   }
 </style>

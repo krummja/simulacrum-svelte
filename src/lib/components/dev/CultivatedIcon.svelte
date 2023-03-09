@@ -9,9 +9,9 @@
 
   onMount(() => {
     el.style.color = [
-      "var(--blossom-lighter)",
-      "var(--blossom-light)",
-      "var(--blossom-normal)",
+      "var(--contrast-1)",
+      "var(--contrast-2)",
+      "var(--contrast-3)",
     ][stage];
   })
 </script>

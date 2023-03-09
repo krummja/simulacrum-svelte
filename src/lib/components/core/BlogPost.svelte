@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: var(--deepnight-normal);
+    background-color: var(--bg-secondary);
 
     padding: 16px;
     margin: 8px 0;
@@ -42,7 +42,7 @@
     .date {
       margin-top: 8px;
       font-weight: 300;
-      color: var(--deepnight-lightest);
+      color: var(--fg-secondary);
     }
 
     .icon {

@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { RouteData } from "./typings";
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
+  import { fly } from "svelte/transition";
   import * as d3 from "d3";
 
   export let page: RouteData;
@@ -43,6 +44,10 @@
       }
     }
   }
+
+  onDestroy(() => {
+    visible = visible;
+  })
 </script>
 
 <svelte:window
@@ -51,13 +56,16 @@
   on:scroll={onScroll}
 />
 <div class="toc-wrapper" style="margin-top: {margin}px">
-  <div class="outline-wrapper" hidden={!visible}>
-    <a class="outline-link outline-link-h1 to-top" href="{pageLink}">[Top]</a>
-    <slot />
-  </div>
   <div on:click={() => visible = !visible} on:keydown class="collapse">
     <div class="collapse-indicator"></div>
   </div>
+
+  {#if visible}
+  <div transition:fly|local="{{x: -150, duration: 1000}}" class="outline-wrapper">
+    <a class="outline-link outline-link-h1 to-top" href="{pageLink}">[Top]</a>
+    <slot />
+  </div>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -73,13 +81,13 @@
   .collapse {
     top: 0;
     bottom: 0;
-    width: 8px;
+    width: 12px;
     height: 50px;
     margin-left: 10px;
     cursor: pointer;
 
     .collapse-indicator {
-      background-color: var(--blossom-darker);
+      background-color: var(--link);
       width: 5px;
       opacity: 0.5;
       height: 100%;

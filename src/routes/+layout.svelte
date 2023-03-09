@@ -6,7 +6,7 @@ import Header from "$lib/components/dev/Header.svelte";
 
 <Header />
 <main>
-  <div class="crt"></div>
+  <!-- <div class="crt"></div> -->
   <div class="content model--default type--standard">
     <slot />
   </div>

@@ -40,7 +40,7 @@
       transition: color 0.1s cubic-bezier(.33, .66, .66, 1);
 
       &:hover {
-        color: var(--blossom-normal);
+        color: var(--link-secondary);
       }
     }
   }

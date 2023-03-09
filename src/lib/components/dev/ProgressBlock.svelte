@@ -16,7 +16,7 @@
     margin: 2rem 0;
     height: 6rem;
     // width: 100vw;
-    background-color: var(--deepnight-darker);
+    background-color: var(--bg-secondary);
 
     h2, h3 {
       margin-top: 0;
