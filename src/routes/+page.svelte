@@ -1,9 +1,36 @@
 <script lang="ts">
   import portrait from "$lib/assets/it_me.png";
+  import { fly, fade } from "svelte/transition";
+  import { sineInOut } from "svelte/easing";
+  import { onMount } from "svelte";
+
+  let mounted: boolean = false;
+  let duration: number = 500;
+  let offset: number = 150;
+
+  onMount(() => {
+    mounted = true;
+  })
 </script>
 
 <div class="intro">
+  {#if mounted}
   <div class="bio">
+    <!-- <h1>Jonathan's space for essays, notes, and digital knickknacks.</h1> -->
+    <div in:fade="{{duration: duration, easing: sineInOut, delay: -100}}">
+      <h1 in:fly="{{duration: duration, easing: sineInOut, x: -200}}">
+        Hi, I'm Jonathan!
+      </h1>
+    </div>
+
+    <div in:fade="{{duration: duration, easing: sineInOut, delay: offset - 100}}">
+      <p in:fly="{{duration: duration, easing: sineInOut, x: -200, delay: offset}}">
+        This is my space for writing, accumulating notes, and collecting digital knickknacks. Content is often in varying degrees of drafting or disarray. I try not to stress too much about the overall presentation of content; after all, sometimes the best you can do is a crude representation of whatever's currently got your attention.
+      </p>
+    </div>
+  </div>
+  {/if}
+  <!-- <div class="bio">
     <h1>Hi, I'm Jonathan!</h1>
 
     <p>
@@ -22,7 +49,7 @@
   </div>
   <div class="portrait">
     <img alt="portrait of me" src={portrait} />
-  </div>
+  </div> -->
 </div>
 
 <style lang="scss">
@@ -31,17 +58,17 @@
     flex-direction: row;
   }
 
-  .bio {
-    max-width: 70%;
-    flex-basis: 1;
-  }
+  // .bio {
+  //   max-width: 70%;
+  //   flex-basis: 1;
+  // }
 
-  .portrait {
-    width: 30%;
-    flex-basis: 1;
-  }
+  // .portrait {
+  //   width: 30%;
+  //   flex-basis: 1;
+  // }
 
-  .cultivation {
-    list-style: none;
-  }
+  // .cultivation {
+  //   list-style: none;
+  // }
 </style>
