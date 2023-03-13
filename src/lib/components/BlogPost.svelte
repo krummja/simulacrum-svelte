@@ -1,12 +1,12 @@
 <script lang="ts">
-  import CultivatedIcon from "$lib/components/dev/CultivatedIcon.svelte";
-  import Tags from "$lib/components/dev/Tags.svelte";
+  import CultivatedIcon from "$lib/components/CultivatedIcon.svelte";
+  // import Tags from "$lib/components/dev/Tags.svelte";
 
   export let title: string;
   export let date: string;
   export let path: string;
   export let stage: number;
-  export let tags: string[];
+  // export let tags: string[];
 
   const stages = [
     "Planting",

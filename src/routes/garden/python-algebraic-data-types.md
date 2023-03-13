@@ -9,9 +9,9 @@ tags:
 ---
 
 <script lang="ts">
-  import EmphasisBox from '$lib/components/core/EmphasisBox.svelte';
-  import ProgressBlock from '$lib/components/dev/ProgressBlock.svelte';
-  import StickyNav from '$lib/components/dev/StickyNav.svelte';
+  import EmphasisBox from '$lib/components/EmphasisBox.svelte';
+  import ProgressBlock from '$lib/components/ProgressBlock.svelte';
+  import StickyNav from '$lib/components/StickyNav.svelte';
   import { page } from '$app/stores';
 </script>
 

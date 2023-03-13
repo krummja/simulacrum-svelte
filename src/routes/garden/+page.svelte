@@ -1,22 +1,36 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import BlogPost from '$lib/components/core/BlogPost.svelte';
-  import FilterBar from "$lib/components/dev/FilterBar.svelte";
+  import BlogPost from '$lib/components/BlogPost.svelte';
+  import { fly } from "svelte/transition";
+  import { sineIn } from "svelte/easing";
+  import { onMount } from "svelte";
+
   export let data: PageData;
+
+  let mounted: boolean = false;
+  let duration: number = 500;
+  let offset: number = 150;
+
+  onMount(() => {
+    mounted = true;
+  })
 </script>
 
 <!-- <FilterBar /> -->
 <div class="index-wrapper">
   <div class="item-wrapper">
-    {#each data.posts as post}
-      <BlogPost
-        title={post.meta.title}
-        date={post.meta.date}
-        stage={post.meta.stage}
-        path={post.path}
-        tags={post.meta.tags}
-      />
+    {#if mounted}
+    {#each data.posts as post, i}
+      <div in:fly="{{duration: duration, delay: i * offset, easing: sineIn, x: -200}}">
+        <BlogPost
+          title={post.meta.title}
+          date={post.meta.date}
+          stage={post.meta.stage}
+          path={post.path}
+        />
+      </div>
     {/each}
+    {/if}
   </div>
 </div>
 

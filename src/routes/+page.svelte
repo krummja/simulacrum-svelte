@@ -1,12 +1,28 @@
 <script lang="ts">
-  import portrait from "$lib/assets/it_me.png";
+  import ThemeSwitch from "$lib/components/ThemeSwitch.svelte";
+  import { theme } from "$lib/store/store";
+  import { get } from "svelte/store";
   import { fly, fade } from "svelte/transition";
   import { sineInOut } from "svelte/easing";
-  import { onMount } from "svelte";
+  import { onMount, afterUpdate } from "svelte";
 
   let mounted: boolean = false;
   let duration: number = 500;
   let offset: number = 150;
+
+  // let prefersDark: boolean;
+
+  // $: {
+  //   if (mounted) {
+  //     prefersDark = (
+  //       window.matchMedia &&
+  //       window.matchMedia('(prefers-color-scheme: dark').matches
+  //     );
+
+  //     theme.set(prefersDark);
+  //     document.documentElement.classList.toggle("dark", prefersDark);
+  //   }
+  // }
 
   onMount(() => {
     mounted = true;
@@ -14,6 +30,7 @@
 </script>
 
 <div class="intro">
+
   {#if mounted}
   <div class="bio">
     <!-- <h1>Jonathan's space for essays, notes, and digital knickknacks.</h1> -->
@@ -30,6 +47,7 @@
     </div>
   </div>
   {/if}
+
   <!-- <div class="bio">
     <h1>Hi, I'm Jonathan!</h1>
 
@@ -55,7 +73,7 @@
 <style lang="scss">
   .intro {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   // .bio {

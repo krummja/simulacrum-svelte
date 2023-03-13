@@ -1,13 +1,12 @@
 <script lang="ts">
 import anime from "animejs";
-import { onMount, beforeUpdate } from "svelte";
+import { onMount } from "svelte";
 
 const width = 260 * 3;
 const height = 143 * 2;
 
 let container: HTMLElement;
 let topl: SVGPathElement;
-// let topr;
 
 type Timeline = {
   timeline: anime.AnimeTimelineInstance | null

@@ -1,0 +1,13 @@
+<script lang="ts">
+  import { onMount } from "svelte";
+
+  onMount(async () => {
+    console.log("Attempting to load WASM application...");
+    await wasm_bindgen('src/lib/wasm/game_bg.wasm');
+  });
+</script>
+
+<div>
+  <canvas id="canvas" width="640" height="480"></canvas>
+  <script src="src/lib/wasm/game.js"></script>
+</div>

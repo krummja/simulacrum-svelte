@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Tag from "$lib/components/dev/Tag.svelte";
-  import StageIcon from "$lib/components/dev/StageIcon.svelte";
+  import Tag from "$lib/components/Tag.svelte";
+  import StageIcon from "$lib/components/StageIcon.svelte";
   const icons = [
     ["木", "Planting"],
     ["林", "Cultivating"],
@@ -55,10 +55,10 @@
     padding: 8px;
   }
 
-  .stage-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30%;
-  }
+  // .stage-wrapper {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-around;
+  //   width: 30%;
+  // }
 </style>

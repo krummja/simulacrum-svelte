@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import Tag from '$lib/components/dev/Tag.svelte';
-  import Tags from '$lib/components/dev/Tags.svelte';
+  import Tag from '$lib/components/Tag.svelte';
+  import Tags from '$lib/components/Tags.svelte';
   export let data: PageData;
 </script>
 

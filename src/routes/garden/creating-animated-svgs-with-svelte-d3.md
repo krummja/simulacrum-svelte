@@ -11,8 +11,8 @@ tags:
   import { select } from "d3";
   import { onMount, afterUpdate } from "svelte";
   import { AnimationLoop } from "$lib/utils/animation";
-  import ProgressBlock from '$lib/components/dev/ProgressBlock.svelte';
-  import StickyNav from '$lib/components/dev/StickyNav.svelte';
+  import ProgressBlock from '$lib/components/ProgressBlock.svelte';
+  import StickyNav from '$lib/components/StickyNav.svelte';
   import { page } from '$app/stores';
 
   let debug = false;

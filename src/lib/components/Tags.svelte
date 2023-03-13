@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Tag from "$lib/components/dev/Tag.svelte";
+  import Tag from "$lib/components/Tag.svelte";
 
   export let tags: string[];
 </script>

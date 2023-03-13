@@ -1,0 +1,16 @@
+:root {
+  --c-bg: var(--deepnight-dark);
+  --c-bg-darker: var(--deepnight-darker);
+  --c-bg-contrast: var(--deepnight-darker);
+  --fg: var(--overcast-soft);
+  --fg-soft: var(--blossom-light);
+  --fg-softer: var(--blossom-lighter);
+  --bg-secondary: var(--deepnight-normal);
+  --fg-secondary: var(--deepnight-lighest);
+  --link: var(--blossom-darker);
+  --link-secondary: var(--blossom-dark);
+
+  --contrast-1: var(--blossom-lighter);
+  --contrast-2: var(--blossom-light);
+  --contrast-3: var(--blossom-normal);
+}

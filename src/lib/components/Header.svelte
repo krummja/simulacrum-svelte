@@ -1,9 +1,9 @@
 <header class="model--default">
   <a class="title" href="/">simulacrum(space)</a>
   <nav>
-    <a href="/garden">garden()</a>
-    <a href="/designs">designs()</a>
-    <a href="/changelog">changelog()</a>
+    <a href="/garden">.garden()</a>
+    <a href="/designs">.designs()</a>
+    <!-- <a href="/changelog">.changelog()</a> -->
   </nav>
 </header>
 
