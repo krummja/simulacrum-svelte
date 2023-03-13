@@ -20,11 +20,11 @@ onMount(() => {
 </script>
 
 <svelte:head>
-  <meta
+  <!-- <meta
     name="color-scheme"
     content={$theme}
   />
-  <link rel="stylesheet" href={`/theme/${$theme}.css`} />
+  <link rel="stylesheet" href={`/theme/${$theme}.css`} /> -->
 </svelte:head>
 
 <Header />

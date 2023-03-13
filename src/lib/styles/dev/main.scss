@@ -63,39 +63,39 @@ html {
   overflow-x: hidden;
   margin-right: calc(-1 * (100vw - 100%));
 
-  // &.dark {
-  //   --c-bg: var(--deepnight-dark);
-  //   --c-bg-darker: var(--deepnight-darker);
-  //   --c-bg-contrast: var(--deepnight-darker);
-  //   --fg: var(--overcast-soft);
-  //   --fg-soft: var(--blossom-light);
-  //   --fg-softer: var(--blossom-lighter);
-  //   --bg-secondary: var(--deepnight-normal);
-  //   --fg-secondary: var(--deepnight-lighest);
-  //   --link: var(--blossom-darker);
-  //   --link-secondary: var(--blossom-dark);
+  &.dark {
+    --c-bg: var(--deepnight-dark);
+    --c-bg-darker: var(--deepnight-darker);
+    --c-bg-contrast: var(--deepnight-darker);
+    --fg: var(--overcast-soft);
+    --fg-soft: var(--blossom-light);
+    --fg-softer: var(--blossom-lighter);
+    --bg-secondary: var(--deepnight-normal);
+    --fg-secondary: var(--deepnight-lighest);
+    --link: var(--blossom-darker);
+    --link-secondary: var(--blossom-dark);
 
-  //   --contrast-1: var(--blossom-lighter);
-  //   --contrast-2: var(--blossom-light);
-  //   --contrast-3: var(--blossom-normal);
-  // }
+    --contrast-1: var(--blossom-lighter);
+    --contrast-2: var(--blossom-light);
+    --contrast-3: var(--blossom-normal);
+  }
 
-  // &:not(.dark) {
-  //   --c-bg: var(--overcast-soft);
-  //   --c-bg-darker: var(--overcast-dark);
-  //   --c-bg-contrast: var(--deepnight-lighter);
-  //   --fg: var(--deepnight-dark);
-  //   --fg-soft: var(--blossom-darker);
-  //   --fg-softer: var(--blossom-dark);
-  //   --bg-secondary: var(--overcast-normal);
-  //   --fg-secondary: var(--deepnight-lightest);
-  //   --link: var(--blossom-light);
-  //   --link-secondary: var(--blossom-normal);
+  &:not(.dark) {
+    --c-bg: var(--overcast-soft);
+    --c-bg-darker: var(--overcast-dark);
+    --c-bg-contrast: var(--deepnight-lighter);
+    --fg: var(--deepnight-dark);
+    --fg-soft: var(--blossom-darker);
+    --fg-softer: var(--blossom-dark);
+    --bg-secondary: var(--overcast-normal);
+    --fg-secondary: var(--deepnight-lightest);
+    --link: var(--blossom-light);
+    --link-secondary: var(--blossom-normal);
 
-  //   --contrast-1: var(--blossom-light);
-  //   --contrast-2: var(--blossom-normal);
-  //   --contrast-3: var(--blossom-darker);
-  // }
+    --contrast-1: var(--blossom-light);
+    --contrast-2: var(--blossom-normal);
+    --contrast-3: var(--blossom-darker);
+  }
 }
 
 body {
