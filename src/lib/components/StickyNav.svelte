@@ -32,14 +32,14 @@
     }
   })
 
-  const onScroll = () => {
+  const updateOutline = () => {
     outlineLinks.forEach((link, index) => {
-      link.classList.remove('active');
+      link.classList.remove('outline-active');
     });
 
     for (let i = anchors.length - 1; i >= 0; i--) {
-      if (scrollY > anchors[i].offsetTop - 75) {
-        outlineLinks[i].classList.add('active');
+      if (scrollY > anchors[i].offsetTop) {
+        outlineLinks[i].classList.add('outline-active');
         break;
       }
     }
@@ -50,11 +50,6 @@
   })
 </script>
 
-<svelte:window
-  bind:outerWidth={width}
-  bind:scrollY={scrollY}
-  on:scroll={onScroll}
-/>
 <div class="toc-wrapper" style="margin-top: {margin}px">
   <div on:click={() => visible = !visible} on:keydown class="collapse">
     <div class="collapse-indicator"></div>
@@ -126,7 +121,7 @@
     transition: color 0.2s cubic-bezier(.33, .66, .66, 1);
   }
 
-  :global(.outline-link .active) {
+  :global(.outline-active) {
     color: var(--blossom-dark);
   }
 </style>

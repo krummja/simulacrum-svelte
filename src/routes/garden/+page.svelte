@@ -1,9 +1,11 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import BlogPost from '$lib/components/BlogPost.svelte';
+
   import { fly } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import { onMount } from "svelte";
+
+  import BlogPost from '$lib/components/BlogPost.svelte';
 
   export let data: PageData;
 

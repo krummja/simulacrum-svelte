@@ -1,17 +1,11 @@
 import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
-// import { remark } from 'remark';
-// import toc from 'remark-toc';
 import toc from '@atomictech/rehype-toc';
 import autolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import rehypeParse from 'rehype-parse';
-import rehypeStringify from 'rehype-stringify';
-// import rehypeKatex from 'rehype-katex';
 import rehypeKatex from 'rehype-katex-svelte';
 import remarkMath from 'remark-math';
-import rehypeDocument from 'rehype-document';
 
 
 const tocOptions = {
@@ -19,9 +13,13 @@ const tocOptions = {
 		toc: 'outline',
 		list: 'outline-level',
 		listItem: 'outline-item',
-		link: 'outline-link'
+		link: 'outline-link',
 	},
 	placeholder: "TOC",
+	customizeTOCItem(tocItem, heading) {
+		// tocItem.properties['id'] = "test-id";
+		// tocItem.properties['on:click'] = "{() => { console.log('click!')}}";
+	},
 };
 
 
@@ -46,9 +44,7 @@ const config = {
 			rehypePlugins: [
 				rehypeSlug,
 				autolinkHeadings,
-				// rehypeParse,
 				rehypeKatex,
-				// rehypeStringify,
 				[toc, tocOptions],
 			],
 			smartypants: {
